@@ -20,6 +20,7 @@ import pandas as pd
 
 
 opts = df['key'].tolist()
+print(opts)
 opts_c = []
 
 for op in opts:
