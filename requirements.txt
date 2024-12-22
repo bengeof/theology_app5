@@ -1,3 +1,4 @@
-transformers
+'transformers[torch]'
+'transformers[tf-cpu]'
 pandas
 langchain
