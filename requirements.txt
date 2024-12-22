@@ -1,4 +1,4 @@
 transformers[torch]
 transformers[tf]
-pandas
+transformers[flax]
 langchain
