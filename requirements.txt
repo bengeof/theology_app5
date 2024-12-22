@@ -1,4 +1,5 @@
 pandas
+transformers
 transformers[torch]
 transformers[tf]
 transformers[flax]
