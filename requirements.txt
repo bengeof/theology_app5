@@ -249,7 +249,6 @@ pyasn1-modules==0.2.8
 pycodestyle==2.11.1
 pycparser==2.21
 pyct==0.5.0
-pycurl==7.45.2
 pydantic==2.8.2
 pydantic_core==2.20.1
 pydeck==0.8.0
