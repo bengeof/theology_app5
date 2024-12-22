@@ -8,7 +8,7 @@ import pandas as pd
 url='https://drive.google.com/file/d/1PHOOkOHVD2IX3gyxtHiyn5ZdFrJGdYFX/view?usp=sharing'
 
 df = pd.read_csv('https://drive.usercontent.google.com/download?id={}&export=download&authuser=0&confirm=t'.format(url.split('/')[-2]), sep='\t', names=['text', 'key', 'period' , 'title'])
-print(df)
+print(df['key'])
 import os
 
 from transformers import pipeline
