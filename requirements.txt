@@ -3,4 +3,4 @@ transformers
 transformers[torch]
 transformers[tf]
 transformers[flax]
-langchain==0.3.13 
+langchain -U
