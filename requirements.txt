@@ -1,4 +1,5 @@
 pandas
+huggingface_hub
 transformers
 transformers[torch]
 transformers[tf]
