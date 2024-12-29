@@ -320,7 +320,7 @@ if generate_button:
             j1_c = 'Question: \n' + str(j1) + '\n'
             main_res += str(j1_c)
         else:
-            
+            j1 = str(j1).strip()
             if len(j1) > 0:
                 j1_c = 'Answer: \n' + str(j1) + '\n'
                 main_res += str(j1_c)
