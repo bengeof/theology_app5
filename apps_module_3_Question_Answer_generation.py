@@ -316,14 +316,16 @@ if generate_button:
     for th in output_text:
         rfp = str(th).split(':')
         j1 = str(rfp[-1])
-        if '?' in j1:
-            j1_c = 'Question: \n' + str(j1) + '\n'
-            main_res += str(j1_c)
-        else:
-            j1 = str(j1).strip()
-            if len(j1) > 0:
-                j1_c = 'Answer: \n' + str(j1) + '\n'
+        j1 = str(j1).strip()
+        if len(j1) > 0:
+            if '?' in j1:
+                j1_c = 'Question: \n' + str(j1) + '\n'
                 main_res += str(j1_c)
+            else:
+                j1 = str(j1).strip()
+                if len(j1) > 0:
+                    j1_c = 'Answer: \n' + str(j1) + '\n'
+                    main_res += str(j1_c)
          
                 
 
