@@ -319,7 +319,8 @@ if generate_button:
         if '?' in j1:
             j1_c = 'Question: \n' + str(j1) + '\n'
         else:
-            if len(j1) > 0:
+            j1 = str(j1).strip()
+            if len(j1) > 1:
                 j1_c = 'Answer: \n' + str(j1) + '\n'
             
         main_res += str(j1_c) 
