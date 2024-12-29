@@ -314,7 +314,7 @@ if generate_button:
     tio.close()
 
     for th in output_text:
-        rfp = tr(th).split(':')
+        rfp = str(th).split(':')
         j1 = str(rfp[-1])
         if '?' in j1:
             j1_c = 'Question: ' + str(j1)
