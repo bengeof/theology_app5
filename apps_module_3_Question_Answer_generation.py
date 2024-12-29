@@ -317,9 +317,9 @@ if generate_button:
         rfp = str(th).split(':')
         j1 = str(rfp[-1])
         if '?' in j1:
-            j1_c = 'Question: ' + str(j1)
+            j1_c = 'Question: \n' + str(j1) + '\n'
         else:
-            j1_c = 'Answer: ' + str(j1)
+            j1_c = 'Answer: \n' + str(j1) + '\n'
             
         main_res += str(j1_c) 
                 
