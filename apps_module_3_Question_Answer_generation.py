@@ -1,3 +1,4 @@
+
 import streamlit as st
 #from transformers import pipeline
 
@@ -5,23 +6,19 @@ import streamlit as st
 #https://stackoverflow.com/questions/18885175/read-a-zipped-file-as-a-pandas-dataframe 
 
 import pandas as pd
-url='https://drive.google.com/file/d/1DlpbMAqIB50aJVyMRES_J_CnxYdRXH-p/view?usp=sharing'
+url='https://drive.google.com/file/d/1jRImDe_etDIGjB9rBYXxsdcPdmqa9x8R/view?usp=sharing'
+#url='https://drive.google.com/file/d/1DlpbMAqIB50aJVyMRES_J_CnxYdRXH-p/view?usp=sharing'
+df = pd.read_csv('https://drive.usercontent.google.com/download?id={}&export=download&authuser=0&confirm=t'.format(url.split('/')[-2]), compression='zip', sep='##', names=['text', 'key', 'period' , 'title'])
 
-df = pd.read_csv('https://drive.usercontent.google.com/download?id={}&export=download&authuser=0&confirm=t'.format(url.split('/')[-2]), sep='##', names=['text', 'key', 'period' , 'title'])
-
-print(df)
 import os
 
 from transformers import pipeline
 
 import pandas as pd
 
-#import spacy
-
 
 
 opts = df['key'].tolist()
-print(opts)
 opts_c = []
 
 for op in opts:
@@ -36,7 +33,7 @@ st.set_page_config(
 )
 
 # Add a title and a description
-st.title("Module_3_Question_Generation")
+st.title("Module_2_User_query")
 st.write(
     "This application generates question answer based on the topic choosen on the author's text of interest."
 )
@@ -45,8 +42,18 @@ st.write(
 #generator = pipeline("text-generation", model="gpt2")
 
 # Create a sidebar for input parameters
-st.sidebar.title("Input Options")
-input_text = st.sidebar.text_input("Select options")
+st.sidebar.title("User input")
+opts_1 = [None, 'Chrysosthom', 'Augustine', 'Spurgeon']
+
+    # Create a sidebar for input parameters
+st.sidebar.title("User input")
+option1 = st.sidebar.selectbox(
+        "Select period of interest",
+        opts_1,
+)
+
+
+
 option = st.sidebar.selectbox(
     "Select topic of interest?",
     opts,
@@ -54,17 +61,31 @@ option = st.sidebar.selectbox(
 
 generate_button = st.sidebar.button("Generate")
 
-if generate_button:
 
+
+
+url = ''
+if generate_button:
+    if option1 == 'Chrysosthom':
+        url='https://drive.google.com/file/d/1TMRVMdwXkFRzdHV-4VXnG5Ic4ozxV_tU/view?usp=sharing'
+    if option1 == 'Augustine':
+        url='https://drive.google.com/file/d/1IoWD1NSlYLA9VNcC3BdfErV1EXGoCFBD/view?usp=sharing'
+    
+
+    df = pd.read_csv('https://drive.usercontent.google.com/download?id={}&export=download&authuser=0&confirm=t'.format(url.split('/')[-2]), compression='zip', sep='##', names=['text', 'key', 'period' , 'title'])
+
+    
     #hf_token ="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"
 
     #os.environ["HUGGINGFACEHUB_API_TOKEN"]= hf_token # replace hf_token with your HuggingFace API-token 
                 
     df1 = df.loc[df['key'] == option]
 
+    print(option)
+
     print(df1)
 
-    hi = df1['text'].tolist()           
+    hi = df1['text'].tolist()                
 
 
 
